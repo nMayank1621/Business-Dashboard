@@ -13,7 +13,7 @@ class PersonalDetails(models.Model):
     pofession = models.CharField(db_column='POFESSION', max_length=50, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'personal_details'
 
     def __str__(self):
