@@ -12,7 +12,7 @@ import EducationPage from './pages/EducationPage'
 import EmployeePage from './pages/EmployeePage'
 import SalaryPage from './pages/SalaryPage'
 
-const API_BASE_URL = 'https://business-dashboard-8nou.onrender.com'
+const API_BASE_URL = 'http://127.0.0.1:8000'
 
 function App() {
   const [activePage, setActivePage] = useState('dashboard')
