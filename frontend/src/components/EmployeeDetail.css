@@ -1,0 +1,228 @@
+.employee-detail-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.employee-detail-container.dark {
+  color: white;
+}
+
+.back-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.3rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-bottom: 1.2rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.detail-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.25);
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.detail-header h1 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.profession {
+  font-size: 1.05rem;
+  opacity: 0.92;
+  margin: 0;
+  font-weight: 500;
+}
+
+.detail-sections {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.detail-card {
+  background: white;
+  padding: 1.3rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.employee-detail-container.dark .detail-card {
+  background: #1a1a2e;
+  border-color: #333;
+}
+
+.detail-card h3 {
+  margin: 0 0 1rem 0;
+  color: #1a1a2e;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.employee-detail-container.dark .detail-card h3 {
+  color: white;
+  border-bottom-color: #333;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.8rem;
+}
+
+.detail-item {
+  padding: 0.8rem 1rem;
+  background: #f8f9ff;
+  border-radius: 8px;
+  border-left: 3px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.employee-detail-container.dark .detail-item {
+  background: rgba(255,255,255,0.05);
+}
+
+.detail-item label {
+  display: block;
+  font-size: 0.78rem;
+  color: #666;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: color 0.3s ease;
+}
+
+.employee-detail-container.dark .detail-item label {
+  color: #aaa;
+}
+
+.detail-item span {
+  display: block;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.employee-detail-container.dark .detail-item span {
+  color: white;
+}
+
+.education-item {
+  padding: 1rem 1.2rem;
+  background: #f8f9ff;
+  border-radius: 10px;
+  margin-bottom: 0.7rem;
+  border-left: 3px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.employee-detail-container.dark .education-item {
+  background: rgba(255,255,255,0.05);
+}
+
+.education-item:last-child {
+  margin-bottom: 0;
+}
+
+.education-item h4 {
+  margin: 0 0 0.4rem 0;
+  color: #1a1a2e;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.employee-detail-container.dark .education-item h4 {
+  color: white;
+}
+
+.education-item p {
+  margin: 0.25rem 0;
+  color: #444;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.employee-detail-container.dark .education-item p {
+  color: #ccc;
+}
+
+@media (max-width: 1024px) {
+  .employee-detail-container {
+    padding: 1rem 1.2rem;
+  }
+
+  .detail-sections {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .employee-detail-container {
+    padding: 0.8rem 1rem;
+  }
+
+  .detail-header {
+    padding: 1.2rem 1.4rem;
+  }
+
+  .detail-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .detail-card {
+    padding: 1.1rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .employee-detail-container {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .detail-header {
+    padding: 1rem;
+  }
+
+  .detail-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .back-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}

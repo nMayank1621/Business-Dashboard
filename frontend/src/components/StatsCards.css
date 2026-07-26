@@ -1,0 +1,134 @@
+.stats-container {
+  display: grid;
+  grid-template-columns:repeat(4,1fr);
+  gap: 24px;
+  margin-bottom: 1.8rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.stat-card {
+  background: white;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  border-left: 4px solid;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card.dark {
+  background: #1a1a2e;
+  color: white;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 0 16px 0 100%;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);  
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.stat-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0.7rem;
+}
+
+.stat-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-icon-wrapper {
+  transform: scale(1.1);
+}
+
+.stat-icon {
+  display: block;
+}
+
+.stat-card h3 {
+  font-size: 0.75rem;
+  color: #666;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.stat-card.dark h3 {
+  color: #aaa;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.stat-card.dark .stat-value {
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .stats-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .stat-value {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1.3rem 1.4rem;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1.2rem 1.3rem;
+  }
+
+  .stat-value {
+    font-size: 1.6rem;
+  }
+}

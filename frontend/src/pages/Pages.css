@@ -1,0 +1,138 @@
+.page-container {
+  padding: 1.8rem 2.2rem;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.page-container.dark {
+  background: #1a1a2e;
+  border-color: #333;
+}
+
+.page-container h2 {
+  margin-top: 0;
+  margin-bottom: 1.3rem;
+  color: #1a1a2e;
+  font-size: 1.6rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.page-container.dark h2 {
+  color: white;
+}
+
+.table-wrapper {
+  background: white;
+  border-radius: 0;
+  box-shadow: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+}
+
+.page-container.dark .table-wrapper {
+  background: #1a1a2e;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+  max-width: 100%;
+}
+
+.data-table th {
+  color: white;
+  padding: 1rem 1.2rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  color: #000000;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.page-container.dark .data-table td {
+  border-bottom: 1px solid #333;
+  color: #e8e8e8;
+}
+
+.data-table tbody tr:hover {
+  background: #f8f9ff;
+}
+
+.page-container.dark .data-table tbody tr:hover {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.no-data {
+  text-align: center;
+  color: #666;
+  padding: 3rem;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.page-container.dark .no-data {
+  color: #aaa;
+}
+
+@media (max-width: 1024px) {
+  .page-container {
+    padding: 1.5rem 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1.3rem 1.2rem;
+  }
+
+  .page-container h2 {
+    font-size: 1.4rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .data-table {
+    min-width: 700px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    padding: 1rem 0.8rem;
+  }
+
+  .page-container h2 {
+    font-size: 1.3rem;
+  }
+}
