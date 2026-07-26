@@ -22,7 +22,11 @@ class PersonalDetails(models.Model):
 
 class EducationDetails(models.Model):
     edu_id = models.AutoField(db_column='EDU_ID', primary_key=True)
-    person = models.ForeignKey(PersonalDetails, models.DO_NOTHING, db_column='PERSON_ID')
+    person = models.ForeignKey(
+        PersonalDetails,
+        models.DO_NOTHING,
+        db_column='PERSON_ID'
+    )
     degree = models.CharField(db_column='DEGREE', max_length=100)
     specialization = models.CharField(db_column='SPECIALIZATION', max_length=50, blank=True, null=True)
     college_name = models.CharField(db_column='COLLEGE_NAME', max_length=50, blank=True, null=True)
@@ -35,12 +39,20 @@ class EducationDetails(models.Model):
         db_table = 'education_details'
 
     def __str__(self):
-        return f"{self.degree} - {self.person.first_name}"
+        if self.person:
+            return f"{self.degree} - {self.person.first_name}"
+        return self.degree
 
 
 class EmployeeDetails(models.Model):
     emp_id = models.AutoField(db_column='EMP_ID', primary_key=True)
-    person = models.ForeignKey(PersonalDetails, models.DO_NOTHING, db_column='PERSON_ID', blank=True, null=True)
+    person = models.ForeignKey(
+        PersonalDetails,
+        models.DO_NOTHING,
+        db_column='PERSON_ID',
+        blank=True,
+        null=True
+    )
     employee_code = models.CharField(db_column='EMPLOYEE_CODE', max_length=20, unique=True, blank=True, null=True)
     department = models.CharField(db_column='DEPARTMENT', max_length=50, blank=True, null=True)
     salary = models.IntegerField(db_column='SALARY', blank=True, null=True)
@@ -52,12 +64,20 @@ class EmployeeDetails(models.Model):
         db_table = 'employee_details'
 
     def __str__(self):
-        return f"{self.employee_code} - {self.person.first_name}"
+        if self.person:
+            return f"{self.employee_code} - {self.person.first_name}"
+        return self.employee_code or "Employee"
 
 
 class SalaryDetails(models.Model):
     salary_id = models.AutoField(db_column='SALARY_ID', primary_key=True)
-    person = models.ForeignKey(PersonalDetails, models.DO_NOTHING, db_column='PERSON_ID', blank=True, null=True)
+    person = models.ForeignKey(
+        PersonalDetails,
+        models.DO_NOTHING,
+        db_column='PERSON_ID',
+        blank=True,
+        null=True
+    )
     monthly_salary = models.IntegerField(db_column='MONTHLY_SALARY', blank=True, null=True)
     yearly_salary = models.IntegerField(db_column='YEARLY_SALARY', blank=True, null=True)
     monthly_tax = models.IntegerField(db_column='MONTHLY_TAX', blank=True, null=True)
@@ -70,4 +90,6 @@ class SalaryDetails(models.Model):
         db_table = 'salary_details'
 
     def __str__(self):
-        return f"{self.person.first_name} - Salary Details"
+        if self.person:
+            return f"{self.person.first_name} - Salary Details"
+        return "Salary Details"
