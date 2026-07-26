@@ -31,9 +31,8 @@ DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'
 
 ALLOWED_HOSTS = os.environ.get(
     'ALLOWED_HOSTS',
-    'localhost,127.0.0.1'
+    'localhost,127.0.0.1,business-dashboard-1-tpy3.onrender.com'
 ).split(',')
-
 # Application definition
 
 INSTALLED_APPS = [
